@@ -1,0 +1,33 @@
+{
+  "name": "Vibhanshu Automate",
+  "version": "1.1",
+  "description": "This chrome extension will help you to Prints Stockx Shipping Label",
+  "manifest_version": 2,
+
+  "browser_action":{
+    "default_title":"Automatic  Printer For Vibhanshu"
+
+  },
+  "permissions": [
+    
+    "activeTab",
+    "tabs",
+    "<all_urls>"    
+  ],
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ]
+    
+  },
+  "content_scripts":[
+    {
+      "matches" : [ "https://stockx.com/portfolio/shippinglabel/*"],
+      "js": ["content.js"]
+
+    }
+
+
+
+  ]
+}
